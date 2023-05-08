@@ -17,11 +17,20 @@ const slides = [
 	}
 ]
 
-let i = 0;
+var i = 0;
 const imgTitle = document.getElementById("img-title");
-let contenu = imgTitle.innerHTML;
+var contenu = imgTitle.innerHTML;
 const arrowLeft = document.querySelector(".arrow_left");
-arrowLeft.addEventListener("click", function() {
+const arrowRight = document.querySelector(".arrow_right");
+const dots = document.querySelector(".dots");
+var positionDot = 0;
+
+//function left click
+
+arrowLeft.addEventListener
+(
+	"click", function()
+{
 	i --;
 	if (i < 0)
 	{
@@ -31,9 +40,12 @@ arrowLeft.addEventListener("click", function() {
 	document.querySelector(".banner-img").src= "./assets/images/slideshow/"+ img;
 	var newText = slides[i].tagLine;
 	imgTitle.innerHTML = newText;
+	dotPosition = i;
+	dotChange();
 });
 
-const arrowRight = document.querySelector(".arrow_right");
+//function right click
+
 arrowRight.addEventListener
 (
 	"click", 
@@ -48,6 +60,36 @@ arrowRight.addEventListener
 		document.querySelector(".banner-img").src= "./assets/images/slideshow/"+img;
 		var newText = slides[i].tagLine;
 		imgTitle.innerHTML = newText;	
+		dotPosition = i;
+		dotChange();
 	}
 );
 
+//div dot creation
+
+for (let i = 0; i < slides.length; i++)
+{
+const newDot = document.createElement("div");
+newDot.classList = "dot";
+dots.appendChild(newDot);
+}
+
+//function changing dot
+
+var dot = document.querySelectorAll(".dot");
+dot[0].classList.add("dot_selected");
+
+function dotChange()
+{
+	for(let i = 0; i < dot.length; i++)
+	{
+		if(i === dotPosition)
+		{
+			dot[i].classList.add("dot_selected");
+		} 
+		else
+		{
+			dot[i].classList.remove("dot_selected");
+		}
+	}
+}
