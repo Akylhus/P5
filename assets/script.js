@@ -30,26 +30,26 @@ let positionDot = 0;
 arrowLeft.addEventListener
 (
 	"click", function()
-{
-	i --;
-	if (i < 0)
 	{
-		i = slides.length - 1;
+		i --;
+		if (i < 0)
+		{
+			i = slides.length - 1;
+		}
+		let img = slides[i].image;
+		document.querySelector(".banner-img").src= "./assets/images/slideshow/"+ img;
+		let newText = slides[i].tagLine;
+		imgTitle.innerHTML = newText;
+		dotPosition = i;
+		dotChange();
 	}
-	let img = slides[i].image;
-	document.querySelector(".banner-img").src= "./assets/images/slideshow/"+ img;
-	let newText = slides[i].tagLine;
-	imgTitle.innerHTML = newText;
-	dotPosition = i;
-	dotChange();
-});
+);
 
 //function right click
 
 arrowRight.addEventListener
 (
-	"click", 
-	function() 
+	"click", function() 
 	{
 		i++;
 		if(i == slides.length)
