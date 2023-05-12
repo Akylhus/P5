@@ -19,7 +19,6 @@ const slides = [
 
 let i = 0;
 const imgTitle = document.getElementById("img-title");
-let contenu = imgTitle.innerHTML;
 const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
 const dots = document.querySelector(".dots");
