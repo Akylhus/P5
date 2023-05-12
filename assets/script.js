@@ -22,7 +22,7 @@ const imgTitle = document.getElementById("img-title");
 const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
 const dots = document.querySelector(".dots");
-let positionDot = 0;
+let dotPosition = 0;
 
 //function left click
 
